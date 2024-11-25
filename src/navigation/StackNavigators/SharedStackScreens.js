@@ -8,7 +8,7 @@ import ObsEdit from "components/ObsEdit/ObsEdit";
 import PhotoSharing from "components/PhotoSharing";
 import { Heading4 } from "components/SharedComponents";
 import SuggestionsContainer from "components/Suggestions/SuggestionsContainer.tsx";
-import SuggestionsTaxonSearch from "components/Suggestions/SuggestionsTaxonSearch.tsx";
+import TaxonSearch from "components/Suggestions/TaxonSearch";
 import TaxonDetails from "components/TaxonDetails/TaxonDetails";
 import { t } from "i18next";
 import {
@@ -32,7 +32,7 @@ const FadeInLocationPickerContainer = ( ) => fadeInComponent( <LocationPickerCon
 const FadeInPhotoSharing = ( ) => fadeInComponent( <PhotoSharing /> );
 const FadeInTaxonDetails = ( ) => fadeInComponent( <TaxonDetails /> );
 const FadeInSuggestionsContainer = ( ) => fadeInComponent( <SuggestionsContainer /> );
-const FadeInTaxonSearch = ( ) => fadeInComponent( <SuggestionsTaxonSearch /> );
+const FadeInTaxonSearch = ( ) => fadeInComponent( <TaxonSearch /> );
 const FadeInFullPageWebView = ( ) => fadeInComponent( <FullPageWebView /> );
 
 // These screens need to be within the NoBottomTabStackNavigator

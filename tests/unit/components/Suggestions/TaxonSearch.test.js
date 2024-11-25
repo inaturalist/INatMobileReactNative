@@ -1,8 +1,8 @@
 import { fireEvent, screen } from "@testing-library/react-native";
-import SuggestionsTaxonSearch from "components/Suggestions/SuggestionsTaxonSearch.tsx";
+import TaxonSearch from "components/Suggestions/TaxonSearch";
 import i18next from "i18next";
 import React from "react";
-import * as useTaxonSearch from "sharedHooks/useTaxonSearch.ts";
+import * as useTaxonSearch from "sharedHooks/useTaxonSearch";
 import factory from "tests/factory";
 import { renderComponent } from "tests/helpers/render";
 
@@ -39,7 +39,7 @@ jest.mock( "sharedHooks/useIconicTaxa", () => ( {
 
 jest.mock( "sharedHooks/useTaxonSearch", () => ( {
   __esModule: true,
-  default: ( ) => ( { taxa: mockTaxaList, isLoading: false } )
+  default: ( ) => ( { taxaSearchResults: mockTaxaList, isLoading: false } )
 } ) );
 
 jest.mock( "sharedHooks/useTaxon", () => ( {
@@ -69,20 +69,28 @@ jest.mock( "react-native-paper", () => {
 describe( "TaxonSearch", ( ) => {
   test( "should not have accessibility errors", async ( ) => {
     const taxonSearch = (
-      <SuggestionsTaxonSearch />
+      <TaxonSearch />
     );
     expect( taxonSearch ).toBeAccessible( );
   } );
 
   it( "should render inside mocked container", ( ) => {
-    renderComponent( <SuggestionsTaxonSearch /> );
+    renderComponent( <TaxonSearch /> );
     expect( screen.getByTestId( "mock-view-no-footer" ) ).toBeTruthy();
+  } );
+
+  it( "should fallback to iconic taxa ", async ( ) => {
+    jest.spyOn( useTaxonSearch, "default" ).mockImplementation( () => (
+      { taxonList: undefined, isLoading: false } ) );
+    renderComponent( <TaxonSearch /> );
+    const taxon = mockIconicTaxaList[0];
+    expect( await screen.findByTestId( `Search.taxa.${taxon.id}` ) ).toBeTruthy();
   } );
 
   it( "show taxon search results", async ( ) => {
     jest.spyOn( useTaxonSearch, "default" ).mockImplementation( () => (
-      { taxa: mockTaxaList, isLoading: false } ) );
-    renderComponent( <SuggestionsTaxonSearch /> );
+      { taxaSearchResults: mockTaxaList, isLoading: false } ) );
+    renderComponent( <TaxonSearch /> );
     const input = screen.getByTestId( "SearchTaxon" );
     const taxon = mockTaxaList[0];
     fireEvent.changeText( input, "Some taxon" );
@@ -90,7 +98,7 @@ describe( "TaxonSearch", ( ) => {
   } );
 
   it( "should render with no initial comment state", ( ) => {
-    renderComponent( <SuggestionsTaxonSearch /> );
+    renderComponent( <TaxonSearch /> );
     const commentSection = screen.queryByText(
       i18next.t( "Your-identification-will-be-posted-with-the-following-comment" )
     );
@@ -101,7 +109,7 @@ describe( "TaxonSearch", ( ) => {
     test( "should not show taxon results", async () => {
       jest.spyOn( useTaxonSearch, "default" ).mockImplementation( () => (
         { taxonList: undefined, isLoading: true } ) );
-      renderComponent( <SuggestionsTaxonSearch /> );
+      renderComponent( <TaxonSearch /> );
       const input = screen.getByTestId( "SearchTaxon" );
       const taxon = mockTaxaList[0];
       const iconicTaxon = mockIconicTaxaList[0];

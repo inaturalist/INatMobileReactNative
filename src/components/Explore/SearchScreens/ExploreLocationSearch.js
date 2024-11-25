@@ -1,6 +1,6 @@
 // @flow
 
-import fetchSearchResults from "api/search.ts";
+import fetchSearchResults from "api/search";
 import {
   Body1,
   Button,

@@ -5,7 +5,7 @@ import {
 } from "react-native";
 
 // Returns info about the keyboard, like whether it's up and how tall it is
-const useKeyboardInfo = ( targetNonKeyboardHeight = 0 ) => {
+const useKeyboardInfo = ( targetNonKeyboardHeight: number ) => {
   const [keyboardShown, setKeyboardShown] = useState( false );
   const [keyboardHeight, setKeyboardHeight] = useState( 0 );
   const nonKeyboardHeight = useMemo(
@@ -38,7 +38,6 @@ const useKeyboardInfo = ( targetNonKeyboardHeight = 0 ) => {
   }, [keyboardShown] );
 
   return {
-    keyboardHeight,
     keyboardShown,
     keyboardVerticalOffset,
     nonKeyboardHeight

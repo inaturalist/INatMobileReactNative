@@ -1,6 +1,5 @@
 import { useQueryClient } from "@tanstack/react-query";
-import fetchSearchResults from "api/search.ts";
-import type { ApiOpts } from "api/types.d.ts";
+import fetchSearchResults from "api/search";
 import {
   Body3,
   SearchBar
@@ -40,7 +39,7 @@ const LocationSearch = ( {
     data: placeResults
   } = useAuthenticatedQuery(
     ["fetchSearchResults", locationName],
-    ( optsWithAuth: ApiOpts ) => fetchSearchResults( {
+    optsWithAuth => fetchSearchResults( {
       q: locationName,
       sources: "places",
       fields: "place,place.display_name,place.point_geojson"

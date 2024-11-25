@@ -24,7 +24,7 @@ interface TaxonResultProps {
   first?: boolean;
   fromLocal?: boolean;
   handleCheckmarkPress: ( taxon: Object ) => void;
-  handleTaxonOrEditPress?: () => void;
+  handleTaxonOrEditPress: () => void;
   handleRemovePress?: () => void;
   hideInfoButton?: boolean;
   lastScreen?: string | null;

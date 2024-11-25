@@ -130,14 +130,9 @@ class Taxon extends Realm.Object {
         mapTo: "defaultPhoto",
         optional: true
       },
-      name: {
-        type: "string",
-        indexed: "full-text",
-        optional: true
-      },
+      name: "string?",
       preferred_common_name: {
         type: "string",
-        indexed: "full-text",
         mapTo: "preferredCommonName",
         optional: true
       },

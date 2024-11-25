@@ -11,25 +11,19 @@ import {
 } from "sharedHooks";
 
 interface Props {
-  isLoading: boolean;
-  searchQuery: string;
-  refetch?: ( ) => void;
-  skipOfflineNotice?: boolean;
+  isLoading: boolean,
+  searchQuery: string,
+  refetch: Function
 }
 
-const EmptySearchResults = ( {
-  isLoading,
-  searchQuery,
-  refetch,
-  skipOfflineNotice
-}: Props ) => {
+const EmptySearchResults = ( { isLoading, searchQuery, refetch }: Props ) => {
   const { t } = useTranslation( );
   const { isConnected } = useNetInfo( );
 
   if ( searchQuery === "" ) {
     return null;
   }
-  if ( isConnected === false && !skipOfflineNotice && refetch ) {
+  if ( isConnected === false ) {
     return (
       <View className="pt-[50px]">
         <OfflineNotice onPress={refetch} />
