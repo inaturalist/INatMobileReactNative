@@ -13,11 +13,7 @@ import useStore from "stores/useStore";
 type Props = {
   testID: string,
   icon: string,
-  onPress: Function,
   active:boolean,
-  accessibilityLabel: string,
-  accessibilityRole?: string,
-  accessibilityHint?: string,
   size: number,
   width?: number,
   height?: number
@@ -27,11 +23,7 @@ const NotificationsIconContainer = ( {
   testID,
   size,
   icon,
-  onPress,
   active,
-  accessibilityLabel,
-  accessibilityHint,
-  accessibilityRole = "tab",
   width,
   height
 }: Props ): Node => {
@@ -73,10 +65,6 @@ const NotificationsIconContainer = ( {
       active={active}
       size={size}
       testID={testID}
-      onPress={onPress}
-      accessibilityRole={accessibilityRole}
-      accessibilityLabel={accessibilityLabel}
-      accessibilityHint={accessibilityHint}
       width={width}
       height={height}
     />

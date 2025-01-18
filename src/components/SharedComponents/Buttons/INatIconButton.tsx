@@ -22,6 +22,8 @@ interface Props {
   disabled?: boolean;
   height?: number;
   icon: string;
+  // Only show the icon with all the same layout, don't make it a button
+  iconOnly?: boolean;
   onPress: ( _event?: GestureResponderEvent ) => void;
   // Inserts a white or colored view under the icon so an holes in the shape show as
   // white
@@ -36,6 +38,15 @@ interface Props {
 
 const MIN_ACCESSIBLE_DIM = 44;
 
+const WRAPPER_STYLE: ViewStyle = {
+  alignItems: "center",
+  justifyContent: "center"
+};
+
+const CONTAINED_WRAPPER_STYLE: ViewStyle = {
+  borderRadius: 9999
+};
+
 // Similar to IconButton in react-native-paper, except this allows independent
 // control over touchable area with `width` and `height` *and* the size of
 // the icon with `size`
@@ -47,6 +58,7 @@ const INatIconButton = ( {
   disabled = false,
   height = MIN_ACCESSIBLE_DIM,
   icon,
+  iconOnly,
   onPress,
   preventTransparency,
   size = 18,
@@ -68,12 +80,12 @@ const INatIconButton = ( {
       `Height cannot be less than ${MIN_ACCESSIBLE_DIM}. Use IconButton for smaller buttons.`
     );
   }
-  if ( !accessibilityLabel ) {
+  if ( !accessibilityLabel && !iconOnly ) {
     throw new Error(
       "Button needs an accessibility label"
     );
   }
-  const opacity = ( pressed: boolean ) => {
+  const getOpacity = React.useCallback( ( pressed: boolean ) => {
     if ( disabled ) {
       return 0.5;
     }
@@ -81,7 +93,84 @@ const INatIconButton = ( {
       return 0.95;
     }
     return 1;
-  };
+  }, [disabled] );
+
+  const wrapperStyle = React.useMemo( ( ) => ( [
+    { width, height },
+    WRAPPER_STYLE,
+    mode === "contained" && {
+      backgroundColor: preventTransparency
+        ? undefined
+        : backgroundColor,
+      ...CONTAINED_WRAPPER_STYLE
+    },
+    style
+  ] ), [
+    backgroundColor,
+    height,
+    mode,
+    preventTransparency,
+    style,
+    width
+  ] );
+
+  const content = (
+    <View
+      className={classnames(
+        "relative",
+        // This degree of pixel pushing was meant for a ~22px icon, so it
+        // might have to be made relative, but it's barely noticeable for
+        // most icons
+        Platform.OS === "android"
+          ? "top-[0.8px]"
+          : "left-[0.2px] top-[0.1px]"
+      )}
+    >
+      { backgroundColor && preventTransparency && (
+        <View
+          // Position and size need to be dynamic
+          // eslint-disable-next-line react-native/no-inline-styles
+          style={{
+            opacity: disabled
+              ? 0
+              : 1,
+            position: "absolute",
+            top: preventTransparency
+              ? 2
+              : -2,
+            start: preventTransparency
+              ? 2
+              : -2,
+            width: preventTransparency
+              ? size - 4
+              : size + 4,
+            height: preventTransparency
+              ? size - 4
+              : size + 4,
+            backgroundColor,
+            borderRadius: 9999
+          }}
+        />
+      )}
+      {
+        children || (
+          <INatIcon
+            name={icon}
+            size={size}
+            color={String( color || colors?.darkGray )}
+          />
+        )
+      }
+    </View>
+  );
+
+  if ( iconOnly ) {
+    return (
+      <View style={wrapperStyle} testID={testID}>
+        { content }
+      </View>
+    );
+  }
 
   return (
     <Pressable
@@ -92,70 +181,12 @@ const INatIconButton = ( {
       disabled={disabled}
       onPress={onPress}
       style={( { pressed } ) => [
-        {
-          opacity: opacity( pressed ),
-          width,
-          height,
-          justifyContent: "center",
-          alignItems: "center"
-        },
-        mode === "contained" && {
-          backgroundColor: preventTransparency
-            ? undefined
-            : backgroundColor,
-          borderRadius: 9999
-        },
-        style
+        ...wrapperStyle,
+        { opacity: getOpacity( pressed ) }
       ]}
       testID={testID}
     >
-      <View
-        className={classnames(
-          "relative",
-          // This degree of pixel pushing was meant for a ~22px icon, so it
-          // might have to be made relative, but it's barely noticeable for
-          // most icons
-          Platform.OS === "android"
-            ? "top-[0.8px]"
-            : "left-[0.2px] top-[0.1px]"
-        )}
-      >
-        { backgroundColor && preventTransparency && (
-          <View
-            // Position and size need to be dynamic
-            // eslint-disable-next-line react-native/no-inline-styles
-            style={{
-              opacity: disabled
-                ? 0
-                : 1,
-              position: "absolute",
-              top: preventTransparency
-                ? 2
-                : -2,
-              start: preventTransparency
-                ? 2
-                : -2,
-              width: preventTransparency
-                ? size - 4
-                : size + 4,
-              height: preventTransparency
-                ? size - 4
-                : size + 4,
-              backgroundColor,
-              borderRadius: 9999
-            }}
-          />
-        )}
-        {
-          children || (
-            <INatIcon
-              name={icon}
-              size={size}
-              color={color || colors.darkGray}
-            />
-          )
-        }
-      </View>
+      { content }
     </Pressable>
   );
 };

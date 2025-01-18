@@ -33,9 +33,6 @@ exports[`CustomTabBar with advanced user layout should render correctly 1`] = `
               "justifyContent": "space-evenly",
             },
             {
-              "alignItems": "center",
-            },
-            {
               "paddingBottom": 4,
               "paddingLeft": 4,
               "paddingRight": 4,
@@ -64,191 +61,15 @@ exports[`CustomTabBar with advanced user layout should render correctly 1`] = `
     >
       <View
         accessibilityHint="Opens the side drawer menu."
-        accessibilityLabel="Open drawer"
-        accessibilityRole="button"
+        accessibilityLabel="Menu"
+        accessibilityRole="tab"
         accessibilityState={
           {
             "busy": undefined,
             "checked": undefined,
             "disabled": false,
             "expanded": undefined,
-            "selected": undefined,
-          }
-        }
-        accessibilityValue={
-          {
-            "max": undefined,
-            "min": undefined,
-            "now": undefined,
-            "text": undefined,
-          }
-        }
-        accessible={true}
-        collapsable={false}
-        focusable={true}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          [
-            {
-              "alignItems": "center",
-              "height": 44,
-              "justifyContent": "center",
-              "opacity": 1,
-              "width": 44,
-            },
-            false,
-            undefined,
-          ]
-        }
-        testID="OPEN_DRAWER"
-      >
-        <View
-          style={
-            [
-              [
-                {
-                  "position": "relative",
-                },
-                {
-                  "left": 0.2,
-                },
-                {
-                  "top": 0.1,
-                },
-              ],
-            ]
-          }
-        >
-          <Text
-            allowFontScaling={false}
-            selectable={false}
-            style={
-              [
-                {
-                  "color": "#454545",
-                  "fontSize": 32,
-                },
-                null,
-                {
-                  "fontFamily": "INatIcon",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                {},
-              ]
-            }
-          >
-            
-          </Text>
-        </View>
-      </View>
-      <View
-        accessibilityHint="Navigates to explore"
-        accessibilityLabel="Explore"
-        accessibilityRole="button"
-        accessibilityState={
-          {
-            "busy": undefined,
-            "checked": undefined,
-            "disabled": false,
-            "expanded": undefined,
-            "selected": undefined,
-          }
-        }
-        accessibilityValue={
-          {
-            "max": undefined,
-            "min": undefined,
-            "now": undefined,
-            "text": undefined,
-          }
-        }
-        accessible={true}
-        collapsable={false}
-        focusable={true}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          [
-            {
-              "alignItems": "center",
-              "height": 44,
-              "justifyContent": "center",
-              "opacity": 1,
-              "width": 44,
-            },
-            false,
-            undefined,
-          ]
-        }
-        testID="RootExplore"
-      >
-        <View
-          style={
-            [
-              [
-                {
-                  "position": "relative",
-                },
-                {
-                  "left": 0.2,
-                },
-                {
-                  "top": 0.1,
-                },
-              ],
-            ]
-          }
-        >
-          <Text
-            allowFontScaling={false}
-            selectable={false}
-            style={
-              [
-                {
-                  "color": "#454545",
-                  "fontSize": 40,
-                },
-                null,
-                {
-                  "fontFamily": "INatIcon",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                {},
-              ]
-            }
-          >
-            
-          </Text>
-        </View>
-      </View>
-      <View
-        accessibilityHint="Shows observation creation options"
-        accessibilityLabel="Add observations"
-        accessibilityRole="button"
-        accessibilityState={
-          {
-            "busy": undefined,
-            "checked": undefined,
-            "disabled": false,
-            "expanded": undefined,
-            "selected": undefined,
+            "selected": false,
           }
         }
         accessibilityValue={
@@ -275,76 +96,49 @@ exports[`CustomTabBar with advanced user layout should render correctly 1`] = `
           [
             [
               {
-                "width": 69,
+                "alignItems": "center",
               },
               {
-                "height": 69,
+                "width": "20%",
               },
               {
-                "borderBottomLeftRadius": 9999,
-                "borderBottomRightRadius": 9999,
-                "borderTopLeftRadius": 9999,
-                "borderTopRightRadius": 9999,
-              },
-              {
-                "overflow": "hidden",
-              },
-              {
-                "elevation": 5,
-                "shadowColor": "rgba( 0, 0, 0, 0.25 )",
-                "shadowOffset": {
-                  "height": 2,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.25,
-                "shadowRadius": 2,
+                "justifyContent": "flex-end",
               },
             ],
           ]
         }
-        testID="add-obs-button"
       >
-        <BVLinearGradient
-          angle={156.95}
-          colors={
+        <View
+          style={
             [
-              4285836288,
-              4280909703,
+              [
+                {
+                  "height": 44,
+                  "width": 44,
+                },
+                {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                },
+                false,
+                undefined,
+              ],
             ]
           }
-          endPoint={
-            {
-              "x": 0.5,
-              "y": 1,
-            }
-          }
-          locations={null}
-          startPoint={
-            {
-              "x": 0.5,
-              "y": 0,
-            }
-          }
-          useAngle={true}
+          testID="OPEN_DRAWER"
         >
           <View
             style={
               [
                 [
                   {
-                    "flexGrow": 1,
+                    "position": "relative",
                   },
                   {
-                    "aspectRatio": 1,
+                    "left": 0.2,
                   },
                   {
-                    "display": "flex",
-                  },
-                  {
-                    "alignItems": "center",
-                  },
-                  {
-                    "justifyContent": "center",
+                    "top": 0.1,
                   },
                 ],
               ]
@@ -356,8 +150,8 @@ exports[`CustomTabBar with advanced user layout should render correctly 1`] = `
               style={
                 [
                   {
-                    "color": "#ffffff",
-                    "fontSize": 31,
+                    "color": "#454545",
+                    "fontSize": 32,
                   },
                   null,
                   {
@@ -369,22 +163,374 @@ exports[`CustomTabBar with advanced user layout should render correctly 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
           </View>
-        </BVLinearGradient>
+        </View>
+        <Text
+          maxFontSizeMultiplier={1.2}
+          numberOfLines={1}
+          style={
+            [
+              {
+                "color": "#454545",
+              },
+              {
+                "fontFamily": "Lato-Regular",
+              },
+              [
+                {
+                  "textAlign": "left",
+                },
+                [
+                  {
+                    "fontSize": 13,
+                    "lineHeight": 18,
+                  },
+                  {
+                    "fontFamily": "Lato-Medium",
+                  },
+                  [
+                    {
+                      "color": "#454545",
+                    },
+                  ],
+                ],
+              ],
+            ]
+          }
+        >
+          Menu
+        </Text>
+      </View>
+      <View
+        accessibilityHint="Navigates to explore"
+        accessibilityLabel="Explore"
+        accessibilityRole="tab"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": false,
+            "expanded": undefined,
+            "selected": false,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          [
+            [
+              {
+                "alignItems": "center",
+              },
+              {
+                "width": "20%",
+              },
+              {
+                "justifyContent": "flex-end",
+              },
+            ],
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              [
+                {
+                  "height": 44,
+                  "width": 44,
+                },
+                {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                },
+                false,
+                undefined,
+              ],
+            ]
+          }
+          testID="RootExplore"
+        >
+          <View
+            style={
+              [
+                [
+                  {
+                    "position": "relative",
+                  },
+                  {
+                    "left": 0.2,
+                  },
+                  {
+                    "top": 0.1,
+                  },
+                ],
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "#454545",
+                    "fontSize": 40,
+                  },
+                  null,
+                  {
+                    "fontFamily": "INatIcon",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+        <Text
+          maxFontSizeMultiplier={1.2}
+          numberOfLines={1}
+          style={
+            [
+              {
+                "color": "#454545",
+              },
+              {
+                "fontFamily": "Lato-Regular",
+              },
+              [
+                {
+                  "textAlign": "left",
+                },
+                [
+                  {
+                    "fontSize": 13,
+                    "lineHeight": 18,
+                  },
+                  {
+                    "fontFamily": "Lato-Medium",
+                  },
+                  [
+                    {
+                      "color": "#454545",
+                    },
+                  ],
+                ],
+              ],
+            ]
+          }
+        >
+          Explore
+        </Text>
+      </View>
+      <View
+        style={
+          [
+            [
+              {
+                "width": 69,
+              },
+              {
+                "height": 60,
+              },
+              {
+                "marginLeft": 12,
+                "marginRight": 12,
+              },
+            ],
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              [
+                {
+                  "position": "absolute",
+                },
+                {
+                  "top": -13,
+                },
+              ],
+            ]
+          }
+        >
+          <View
+            accessibilityHint="Shows observation creation options"
+            accessibilityLabel="Add observations"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": false,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              [
+                [
+                  {
+                    "width": 69,
+                  },
+                  {
+                    "height": 69,
+                  },
+                  {
+                    "marginBottom": 5,
+                  },
+                  {
+                    "borderBottomLeftRadius": 9999,
+                    "borderBottomRightRadius": 9999,
+                    "borderTopLeftRadius": 9999,
+                    "borderTopRightRadius": 9999,
+                  },
+                  {
+                    "overflow": "hidden",
+                  },
+                  {
+                    "elevation": 5,
+                    "shadowColor": "rgba( 0, 0, 0, 0.25 )",
+                    "shadowOffset": {
+                      "height": 2,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.25,
+                    "shadowRadius": 2,
+                  },
+                ],
+              ]
+            }
+            testID="add-obs-button"
+          >
+            <BVLinearGradient
+              angle={156.95}
+              colors={
+                [
+                  4285836288,
+                  4280909703,
+                ]
+              }
+              endPoint={
+                {
+                  "x": 0.5,
+                  "y": 1,
+                }
+              }
+              locations={null}
+              startPoint={
+                {
+                  "x": 0.5,
+                  "y": 0,
+                }
+              }
+              useAngle={true}
+            >
+              <View
+                style={
+                  [
+                    [
+                      {
+                        "flexGrow": 1,
+                      },
+                      {
+                        "aspectRatio": 1,
+                      },
+                      {
+                        "display": "flex",
+                      },
+                      {
+                        "alignItems": "center",
+                      },
+                      {
+                        "justifyContent": "center",
+                      },
+                    ],
+                  ]
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "#ffffff",
+                        "fontSize": 31,
+                      },
+                      null,
+                      {
+                        "fontFamily": "INatIcon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </BVLinearGradient>
+          </View>
+        </View>
       </View>
       <View
         accessibilityHint="Navigates to your observations"
-        accessibilityLabel="Observations"
-        accessibilityRole="button"
+        accessibilityLabel="Me"
+        accessibilityRole="tab"
         accessibilityState={
           {
             "busy": undefined,
             "checked": undefined,
             "disabled": false,
             "expanded": undefined,
-            "selected": undefined,
+            "selected": true,
           }
         }
         accessibilityValue={
@@ -409,70 +555,126 @@ exports[`CustomTabBar with advanced user layout should render correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           [
-            {
-              "alignItems": "center",
-              "height": 44,
-              "justifyContent": "center",
-              "opacity": 1,
-              "width": 44,
-            },
-            false,
-            undefined,
+            [
+              {
+                "alignItems": "center",
+              },
+              {
+                "width": "20%",
+              },
+              {
+                "justifyContent": "flex-end",
+              },
+            ],
           ]
         }
-        testID="NavButton.personIcon"
       >
         <View
           style={
             [
               [
                 {
-                  "position": "relative",
+                  "height": 44,
+                  "width": 44,
                 },
                 {
-                  "left": 0.2,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 },
+                false,
+                undefined,
+              ],
+            ]
+          }
+          testID="NavButton.personIcon"
+        >
+          <View
+            style={
+              [
+                [
+                  {
+                    "position": "relative",
+                  },
+                  {
+                    "left": 0.2,
+                  },
+                  {
+                    "top": 0.1,
+                  },
+                ],
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "#74AC00",
+                    "fontSize": 40,
+                  },
+                  null,
+                  {
+                    "fontFamily": "INatIcon",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+        <Text
+          maxFontSizeMultiplier={1.2}
+          numberOfLines={1}
+          style={
+            [
+              {
+                "color": "#454545",
+              },
+              {
+                "fontFamily": "Lato-Regular",
+              },
+              [
                 {
-                  "top": 0.1,
+                  "textAlign": "left",
                 },
+                [
+                  {
+                    "fontSize": 13,
+                    "lineHeight": 18,
+                  },
+                  {
+                    "fontFamily": "Lato-Medium",
+                  },
+                  [
+                    {
+                      "color": "#74AC00",
+                    },
+                  ],
+                ],
               ],
             ]
           }
         >
-          <Text
-            allowFontScaling={false}
-            selectable={false}
-            style={
-              [
-                {
-                  "color": "#74AC00",
-                  "fontSize": 40,
-                },
-                null,
-                {
-                  "fontFamily": "INatIcon",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                {},
-              ]
-            }
-          >
-            
-          </Text>
-        </View>
+          Me
+        </Text>
       </View>
       <View
         accessibilityHint="Navigates to notifications"
-        accessibilityLabel="Notifications"
-        accessibilityRole="button"
+        accessibilityLabel="Activity"
+        accessibilityRole="tab"
         accessibilityState={
           {
             "busy": undefined,
             "checked": undefined,
             "disabled": false,
             "expanded": undefined,
-            "selected": undefined,
+            "selected": false,
           }
         }
         accessibilityValue={
@@ -497,58 +699,114 @@ exports[`CustomTabBar with advanced user layout should render correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           [
-            {
-              "alignItems": "center",
-              "height": 44,
-              "justifyContent": "center",
-              "opacity": 1,
-              "width": 44,
-            },
-            false,
-            undefined,
+            [
+              {
+                "alignItems": "center",
+              },
+              {
+                "width": "20%",
+              },
+              {
+                "justifyContent": "flex-end",
+              },
+            ],
           ]
         }
-        testID="Notifications"
       >
         <View
           style={
             [
               [
                 {
-                  "position": "relative",
+                  "height": 44,
+                  "width": 44,
                 },
                 {
-                  "left": 0.2,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 },
+                false,
+                undefined,
+              ],
+            ]
+          }
+          testID="Notifications"
+        >
+          <View
+            style={
+              [
+                [
+                  {
+                    "position": "relative",
+                  },
+                  {
+                    "left": 0.2,
+                  },
+                  {
+                    "top": 0.1,
+                  },
+                ],
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "#454545",
+                    "fontSize": 32,
+                  },
+                  null,
+                  {
+                    "fontFamily": "INatIcon",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+        <Text
+          maxFontSizeMultiplier={1.2}
+          numberOfLines={1}
+          style={
+            [
+              {
+                "color": "#454545",
+              },
+              {
+                "fontFamily": "Lato-Regular",
+              },
+              [
                 {
-                  "top": 0.1,
+                  "textAlign": "left",
                 },
+                [
+                  {
+                    "fontSize": 13,
+                    "lineHeight": 18,
+                  },
+                  {
+                    "fontFamily": "Lato-Medium",
+                  },
+                  [
+                    {
+                      "color": "#454545",
+                    },
+                  ],
+                ],
               ],
             ]
           }
         >
-          <Text
-            allowFontScaling={false}
-            selectable={false}
-            style={
-              [
-                {
-                  "color": "#454545",
-                  "fontSize": 32,
-                },
-                null,
-                {
-                  "fontFamily": "INatIcon",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                {},
-              ]
-            }
-          >
-            
-          </Text>
-        </View>
+          Activity
+        </Text>
       </View>
     </View>
   </View>

@@ -36,14 +36,18 @@ exports[`INatIconButton renders correctly 1`] = `
   style={
     [
       {
-        "alignItems": "center",
         "height": 44,
-        "justifyContent": "center",
-        "opacity": 1,
         "width": 44,
+      },
+      {
+        "alignItems": "center",
+        "justifyContent": "center",
       },
       false,
       undefined,
+      {
+        "opacity": 1,
+      },
     ]
   }
 >

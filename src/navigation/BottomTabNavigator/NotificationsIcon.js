@@ -1,9 +1,7 @@
 // @flow
 import classnames from "classnames";
 import { INatIcon, INatIconButton } from "components/SharedComponents";
-import {
-  Pressable, View
-} from "components/styledComponents";
+import { View } from "components/styledComponents";
 import * as React from "react";
 import colors from "styles/tailwindColors";
 
@@ -11,11 +9,7 @@ type Props = {
     unread: boolean,
     icon: string,
     testID: string,
-    onPress: Function,
     active:boolean,
-    accessibilityLabel: string,
-    accessibilityRole?: string,
-    accessibilityHint?: string,
     size: number,
     width?: number,
     height?: number
@@ -26,33 +20,20 @@ const NotificationsIcon = ( {
   testID,
   size,
   icon,
-  onPress,
   active,
-  accessibilityLabel,
-  accessibilityHint,
-  accessibilityRole = "tab",
   width,
   height
 }: Props ): React.Node => {
   /* eslint-disable react/jsx-props-no-spreading */
   const sharedProps = {
     testID,
-    onPress,
-    accessibilityRole,
-    accessibilityLabel,
-    accessibilityHint,
-    accessibilityState: {
-      selected: active,
-      expanded: active,
-      disabled: false
-    },
     width,
     height
   };
 
   if ( unread ) {
     return (
-      <Pressable
+      <View
         className="flex items-center justify-center"
         {...sharedProps}
       >
@@ -88,7 +69,7 @@ const NotificationsIcon = ( {
             )}
           />
         </View>
-      </Pressable>
+      </View>
     );
   }
 
@@ -100,6 +81,7 @@ const NotificationsIcon = ( {
         : colors.darkGray}
       size={size}
       {...sharedProps}
+      iconOnly
     />
   );
 };

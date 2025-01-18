@@ -460,14 +460,18 @@ exports[`TaxonResult should render correctly 1`] = `
       style={
         [
           {
-            "alignItems": "center",
             "height": 44,
-            "justifyContent": "center",
-            "opacity": 1,
             "width": 44,
+          },
+          {
+            "alignItems": "center",
+            "justifyContent": "center",
           },
           false,
           undefined,
+          {
+            "opacity": 1,
+          },
         ]
       }
     >
@@ -546,11 +550,12 @@ exports[`TaxonResult should render correctly 1`] = `
       style={
         [
           {
-            "alignItems": "center",
             "height": 44,
-            "justifyContent": "center",
-            "opacity": 1,
             "width": 44,
+          },
+          {
+            "alignItems": "center",
+            "justifyContent": "center",
           },
           false,
           [
@@ -558,6 +563,9 @@ exports[`TaxonResult should render correctly 1`] = `
               "marginLeft": 8,
             },
           ],
+          {
+            "opacity": 1,
+          },
         ]
       }
       testID="undefined.checkmark"

@@ -43,7 +43,7 @@ const CustomTabBarContainer = ( { navigation }: Props ): Node => {
     {
       icon: "hamburger-menu",
       testID: DRAWER_ID,
-      accessibilityLabel: t( "Open-drawer" ),
+      accessibilityLabel: t( "Menu" ),
       accessibilityHint: t( "Opens-the-side-drawer-menu" ),
       size: 32,
       onPress: ( ) => {
@@ -66,7 +66,7 @@ const CustomTabBarContainer = ( { navigation }: Props ): Node => {
       icon: "person",
       userIconUri: User.uri( currentUser ),
       testID: "NavButton.personIcon",
-      accessibilityLabel: t( "Observations" ),
+      accessibilityLabel: t( "My-Observations--bottom-tab" ),
       accessibilityHint: t( "Navigates-to-your-observations" ),
       size: 40,
       onPress: ( ) => {
@@ -77,7 +77,7 @@ const CustomTabBarContainer = ( { navigation }: Props ): Node => {
     {
       icon: "notifications-bell",
       testID: SCREEN_NAME_NOTIFICATIONS,
-      accessibilityLabel: t( "Notifications" ),
+      accessibilityLabel: t( "Notifications--bottom-tab" ),
       accessibilityHint: t( "Navigates-to-notifications" ),
       size: 32,
       onPress: ( ) => {

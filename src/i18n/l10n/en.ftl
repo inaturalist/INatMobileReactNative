@@ -722,6 +722,12 @@ Most-faved = Most faved
 # created by the viewer. Should be 16 characters or fewer or it will be ellipsized.
 MY-CONTENT--notifications = MY CONTENT
 My-Observations = My Observations
+# Label for the bottom tab that shows your observations. Feel free to be
+# flexible in translating this to keep it as short as possible. "My
+# Observations" would be our preference in English, but it won't really fit,
+# so we went with "Me". You have about ~7-20 characters before it gets cut
+# off on the smallest screen sizes.
+My-Observations--bottom-tab = Me
 Native = Native
 Native-to-place = Native to { $place }
 Navigates-to-AI-camera = Navigates to AI camera
@@ -785,7 +791,12 @@ NOTES = NOTES
 # Label for section in ObsDetails with notes/description of observation
 Notes = Notes
 NOTIFICATIONS = NOTIFICATIONS
-Notifications = Notifications
+# Label for the bottom tab that shows notifications. Feel free to be flexible
+# in translating this to keep it as short as possible. "Notifications" would
+# be our preference in English, but it won't really fit, so we went
+# with "Activity". You have about ~7-20 characters before it gets cut off on
+# the smallest screen sizes.
+Notifications--bottom-tab = Activity
 # notification when someone adds a comment to your observation
 notifications-user-added-comment-to-observation-by-you = <0>{ $userName }</0> added a comment to an observation by you
 # notification when someone adds an identification to your observation
@@ -856,7 +867,6 @@ Once-you-create-and-upload-observations = Once you create & upload observations,
 One-last-step = One last step!
 # Adjective, as in geoprivacy
 Open = Open
-Open-drawer = Open drawer
 OPEN-EMAIL = OPEN EMAIL
 Open-menu = Open menu.
 # Text for a button that opens the operating system Settings app

@@ -102,7 +102,7 @@ async function navigateToRootExplore( ) {
   const welcomeBack = await screen.findByText( /Welcome back/ );
   await waitFor( ( ) => expect( welcomeBack ).toBeVisible( ) );
   const tabBar = await screen.findByTestId( "CustomTabBar" );
-  const exploreButton = await within( tabBar ).findByLabelText( "Explore" );
+  const exploreButton = await within( tabBar ).findByText( "Explore" );
   await actor.press( exploreButton );
 }
 
