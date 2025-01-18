@@ -17,7 +17,10 @@ import { convertOfflineScoreToConfidence } from "sharedHelpers/convertScores.ts"
 import { log } from "sharedHelpers/logger";
 import { deleteSentinelFile, logStage } from "sharedHelpers/sentinelFiles.ts";
 import {
-  useDebugMode, usePerformance, useTranslation
+  useDebugMode,
+  useLayoutPrefs,
+  usePerformance,
+  useTranslation
 } from "sharedHooks";
 import { isDebugMode } from "sharedHooks/useDebugMode";
 import useStore from "stores/useStore";
@@ -75,6 +78,7 @@ const AICamera = ( {
 
   const hasFlash = device?.hasFlash;
   const { isDebug } = useDebugMode( );
+  const { isDefaultMode } = useLayoutPrefs( );
   const {
     animatedProps,
     handleZoomButtonPress,
@@ -226,7 +230,11 @@ const AICamera = ( {
               <TaxonResult
                 asListItem={false}
                 clearBackground
-                confidence={convertOfflineScoreToConfidence( result?.score )}
+                confidence={
+                  ( isDefaultMode && isDebug )
+                    ? null
+                    : convertOfflineScoreToConfidence( result?.score )
+                }
                 unpressable
                 taxon={result?.taxon}
                 testID={`AICamera.taxa.${result?.taxon?.id}`}
