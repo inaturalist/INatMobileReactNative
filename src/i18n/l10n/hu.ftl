@@ -137,6 +137,7 @@ Observation-location-obscured-randomized-point = E megfigyelés földrajzi helye
 Observation-location-obscured-you-can-see-your-own = E megfigyelés földrajzi helye ki van takarva. A saját megfigyeléseid földrajzi helyét bármikor megtekintheted.
 Observation-location-obscured-you-have-permission = E megfigyelés földrajzi helye ki van takarva, vuszont van jogosultságod a pontos hely megtekintéséhez.
 Observations = Megfigyelések
+Observations-need-location-date--warning = Az iNaturalist-megfigyeléseknek hellyel és dátummal kell rendelkezniük ahhoz hogy hasznosak legyenek a tudomány számára. Kérjük ellenőrizd az ezzel az ikonnal jelzett megfigyeléseket feltöltés előtt.
 Observations-on-iNat-are-cited = Az iNaturalistra feltöltött megfigyelésekre tudományos kutatások hivatkoznak, azok újbóli felfedezésekhez vezetnek és segítenek a tudománynak a természet alaposabb megismerésében.
 Observe = Észlelés
 OBSERVED-IN--label = MEGFIGYELÉS HELYE:
@@ -265,6 +266,7 @@ x-uploading =
         [one] { $count } feltöltés alatt
        *[other] { $count } feltöltés alatt
     }
+You-havent-observed-any-species-yet = Még nincsenek megfigyelt fajaid.
 You-must-install-Google-Play-Services-to-sign-in-with-Google = Google-fiókkal történő bejelentkezéshez szükséges a Google Play Services telepítése
 You-need-log-in-to-do-that = Ehhez be kell jelentkezned.
 You-observed-a-new-species = Egy új fajt figyeltél meg!
